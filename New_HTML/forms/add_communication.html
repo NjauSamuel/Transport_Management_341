@@ -1,0 +1,23 @@
+<form action="add_communication.php" method="POST">
+   <label for="from_department_id">From Department ID:</label>
+   <input
+      type="number"
+      id="from_department_id"
+      name="from_department_id"
+      required /><br />
+   <label for="to_department_id">To Department ID:</label>
+   <input
+      type="number"
+      id="to_department_id"
+      name="to_department_id"
+      required /><br />
+   <label for="communication_content">Communication Content:</label><br />
+   <textarea
+      id="communication_content"
+      name="communication_content"
+      rows="4"
+      cols="50"
+      required></textarea
+   ><br />
+   <input type="submit" value="Add Communication Record" />
+</form>
