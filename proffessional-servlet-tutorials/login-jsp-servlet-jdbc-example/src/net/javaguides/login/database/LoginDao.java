@@ -16,7 +16,7 @@ public class LoginDao {
 		Class.forName("com.mysql.jdbc.Driver");
 
 		try (Connection connection = DriverManager
-				.getConnection("jdbc:mysql://localhost:3306/mysql_database?useSSL=false", "root", "root");
+				.getConnection("jdbc:mysql://localhost:3306/mysql_database?useSSL=false", "root", "SamuelKamauNjau1.");
 
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection

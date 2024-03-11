@@ -44,6 +44,7 @@ public class LoginServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				//session.setAttribute("user", username);
 				//response.sendRedirect("login.jsp");
+                                response.sendRedirect("login_failure.jsp");
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
