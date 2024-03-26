@@ -10,18 +10,20 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
 
 
-@WebServlet("/DataServlet")
+
 public class DataServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //response.setContentType("text/html;charset=UTF-8");
 
         // Database connection details
         String url = "jdbc:mysql://localhost:3306/campus_travel_planner?useSSL=false";
@@ -31,36 +33,41 @@ public class DataServlet extends HttpServlet {
         // Store results in a list of arrays
         ArrayList<String[]> data = new ArrayList<>();
 
-        try (Connection conn = DriverManager.getConnection(url, username, password)) {
-            // Create SQL statement
-            String sql = "SELECT pt.provisional_trip_id, pt.dvc_aa_approval_date, t.visit_location, t.purpose, ft.registrar_aa_approval_date, ft.dvc_apd_approval_date "
-                    + "FROM provisionaltrips pt "
-                    + "INNER JOIN trips AS t ON t.trip_id = pt.trip_id "
-                    + "LEFT JOIN finaltripsList ft ON pt.trip_id = ft.trip_id";
-            Statement stmt = conn.createStatement();
+        try {
+            // Load MySQL JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Execute SQL query
-            ResultSet rs = stmt.executeQuery(sql);
+            // Connect to the database
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                // Create SQL statement with a PreparedStatement
+                String sql = "SELECT pt.provisional_trip_id, pt.dvc_aa_approval_date, t.visit_location, t.purpose, ft.registrar_aa_approval_date, ft.dvc_apd_approval_date "
+                        + "FROM provisionaltrips pt "
+                        + "INNER JOIN trips AS t ON t.trip_id = pt.trip_id "
+                        + "LEFT JOIN finaltripsList ft ON pt.trip_id = ft.trip_id";
+                PreparedStatement pstmt = conn.prepareStatement(sql);
 
-            // Retrieve data from result set
-            while (rs.next()) {
-                String[] row = {
-                    rs.getString("provisional_trip_id"),
-                    rs.getString("dvc_aa_approval_date"),
-                    rs.getString("visit_location"),
-                    rs.getString("purpose"),
-                    rs.getString("registrar_aa_approval_date"),
-                    rs.getString("dvc_apd_approval_date")
-                };
-                data.add(row);
+                // Execute SQL query
+                ResultSet rs = pstmt.executeQuery();
+
+                // Retrieve data from result set
+                while (rs.next()) {
+                    String[] row = {
+                            rs.getString("provisional_trip_id"),
+                            rs.getString("dvc_aa_approval_date"),
+                            rs.getString("visit_location"),
+                            rs.getString("purpose"),
+                            rs.getString("registrar_aa_approval_date"),
+                            rs.getString("dvc_apd_approval_date")
+                    };
+                    data.add(row);
+                }
             }
-        } catch (Exception e) {
-            Logger.getLogger(DataServlet.class.getName()).log(Level.SEVERE, "Error retrieving data", e);
-            // Forward to an error page or display a user-friendly message
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred while retrieving data");
-            return;
-        } // Close resources in a finally block
-        
+
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+            response.getWriter().write("Error: " + e.getMessage());
+        }
+
         // Determine the data type of the data array
         String dataType = "";
         if (!data.isEmpty() && data.get(0) != null) {
@@ -74,8 +81,7 @@ public class DataServlet extends HttpServlet {
         if (data.isEmpty()) {
             request.setAttribute("errorMessage", "No data available");
         }
-        //request.getRequestDispatcher("DisplayData.jsp").forward(request, response);
-        
+
         RequestDispatcher rd = request.getRequestDispatcher("DisplayData.jsp");
         rd.forward(request, response);
     }

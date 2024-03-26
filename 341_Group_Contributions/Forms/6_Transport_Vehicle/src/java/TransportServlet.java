@@ -50,9 +50,6 @@ public class TransportServlet extends HttpServlet {
             // Close database connection
             conn.close();
             
-            // Print data to console
-            System.out.println("Data from database:");
-            
         } catch (ClassNotFoundException | SQLException e) {
             response.getWriter().write("Error: " + e.getMessage());
         }
