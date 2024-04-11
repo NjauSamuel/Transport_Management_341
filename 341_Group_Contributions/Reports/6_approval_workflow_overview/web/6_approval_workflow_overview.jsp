@@ -9,7 +9,7 @@
       
    </head>
    <body>
-       <section class="py-4">
+       <section class="py-4 bg-light">
             <div class="container px-5 py-3">
                 <div class="row gx-5 justify-content-center text-center mb-4">
                     <div class="col-lg-8 col-xl-6">

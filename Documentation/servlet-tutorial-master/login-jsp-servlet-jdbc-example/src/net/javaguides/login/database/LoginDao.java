@@ -15,10 +15,10 @@ public class LoginDao {
 
 		Class.forName("com.mysql.jdbc.Driver");
 
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql_database?useSSL=false", "root", "root1");
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/campus_travel_planner?useSSL=false", "root", "root1");
 
-				// Step 2:Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement("select * from login where username = ? and password = ? ")) {
+			// Step 2:Create a statement using connection object
+			PreparedStatement preparedStatement = connection.prepareStatement("select * from login where username = ? and password = ? ")) {
 			preparedStatement.setString(1, loginBean.getUsername());
 			preparedStatement.setString(2, loginBean.getPassword());
 
