@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>FormsBusinessServlet</servlet-name>
+        <servlet-class>BusinessPackage.FormsBusinessServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcessFormsServlet</servlet-name>
+        <servlet-class>ProcessFormsPackage.ProcessFormsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FormsDataClassServlet</servlet-name>
+        <servlet-class>DataClassPackage.FormsDataClassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FormsBusinessServlet</servlet-name>
+        <url-pattern>/FormsBusinessServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessFormsServlet</servlet-name>
+        <url-pattern>/ProcessFormsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FormsDataClassServlet</servlet-name>
+        <url-pattern>/FormsDataClassServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
