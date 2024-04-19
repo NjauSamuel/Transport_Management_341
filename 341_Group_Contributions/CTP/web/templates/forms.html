@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <title>CTP - Campus Wheels</title>
+      <!-- Favicon-->
+      <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+      <!-- Bootstrap icons-->
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+         rel="stylesheet" />
+      <!-- Core theme CSS (includes Bootstrap)-->
+      <link href="css/styles.css" rel="stylesheet" />
+
+      <style>
+         .custom-hover-effect {
+             transition: border-color 0.3s ease, transform 0.3s ease;
+         }
+         .custom-hover-effect:hover {
+             border: 1px solid #0d6efd; /* Blue border color */
+             transform: scale(1.05); /* Scale up effect */
+         }
+     </style>
+
+   </head>
+   <body class="d-flex flex-column">
+      <main class="flex-shrink-0">
+         <!-- Navigation-->
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+               <a class="navbar-brand" href="index.html"
+                  >Campus Travel Planner</a
+               >
+               <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div
+                  class="collapse navbar-collapse"
+                  id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="forms.html">Forms</a>
+                     </li>
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                     </li>
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                     </li>
+
+                     <li class="nav-item dropdown">
+                        <a
+                           class="nav-link dropdown-toggle"
+                           id="navbarDropdownBlog"
+                           href="#"
+                           role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false"
+                           >Blog</a
+                        >
+                        <ul
+                           class="dropdown-menu dropdown-menu-end"
+                           aria-labelledby="navbarDropdownBlog">
+                           <li>
+                              <a class="dropdown-item" href="blog-home.html"
+                                 >Blog Home</a
+                              >
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="blog-post.html"
+                                 >Blog Post</a
+                              >
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+
+         <!-- Forms Header-->
+         <header class="py-5 bg-light mb-5">
+            <div class="container px-4">
+               <div class="row justify-content-center">
+                  <div class="col-lg-8 col-xxl-6">
+                     <div class="text-center my-5">
+                        <h1 class="fw-bolder mb-3">
+                           The Forms Allow You To Enter Data Into The System
+                        </h1>
+                        <p class="lead fw-normal text-muted mb-4">
+                           Each of the eight forms below has a description of
+                           the database table in which it enters its data.
+                        </p>
+                        <a class="btn btn-primary btn-lg" href="#forms"
+                           >Get Started</a
+                        >
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+
+         <!-- Forms section-->
+         <section class="py-4 mb-4" id="forms">
+            <div class="container px-5">
+               <div class="row gx-5 justify-content-center">
+                  <div class="col-lg-8 col-xl-6">
+                     <div class="text-center">
+                        <h2 class="fw-bolder">CTP Forms</h2>
+                        <p class="lead fw-normal text-muted mb-4">
+                           System Forms
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="row gx-5">
+                  <div class="col-lg-12">
+                     <div class="row gx-5 row-cols-1 row-cols-md-3">
+                        <div class="col pt-1 pb-4 h-100 custom-hover-effect">
+                           <div
+                              class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                              <i class="bi bi-collection"></i>
+                           </div>
+                           <h2 class="h5">Department-wise Trip Summary</h2>
+                           <p class="mb-0">
+                              This report provides a summary of trips for each
+                              department, Including the department name, total
+                              number of trips, total budget allocated, and
+                              average budget per trip.
+                           </p>
+                        </div>
+                        <div class="col pt-1 pb-4 h-100 custom-hover-effect">
+                           <div
+                              class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                              <i class="bi bi-building"></i>
+                           </div>
+                           <h2 class="h5">Upcoming Trips Overview</h2>
+                           <p class="mb-0">
+                              This report displays a list of upcoming trips
+                              along with their details such as visit location,
+                              date, and purpose. It includes information about
+                              the department and the approval status of the
+                              trip.
+                           </p>
+                        </div>
+                        <div class="col pt-1 pb-4 mb-md-0 h-100 custom-hover-effect">
+                           <div
+                              class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                              <i class="bi bi-toggles2"></i>
+                           </div>
+                           <h2 class="h5">Transportation Utilization Report</h2>
+                           <p class="mb-0">
+                              Shows the utilization of different types of
+                              transport vehicles, including information about
+                              the number of trips each vehicle has been assigned
+                              to and the total capacity utilized.
+                           </p>
+                        </div>
+                        <div class="col pt-1 pb-4 h-100 custom-hover-effect">
+                           <div
+                              class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                              <i class="bi bi-toggles2"></i>
+                           </div>
+                           <h2 class="h5">Funding Requests Summary</h2>
+                           <p class="mb-0">
+                              This report provides a summary of funding requests
+                              made by departments, including the total number of
+                              requests, total amount requested, and average
+                              amount per request.
+                           </p>
+                        </div>
+                        
+                        <div class="col pt-1 pb-4 h-100 custom-hover-effect">
+                           <div
+                              class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                              <i class="bi bi-toggles2"></i>
+                           </div>
+                           <h2 class="h5">Approval Workflow Overview</h2>
+                           <p class="mb-0">
+                              Shows an overview of the approval workflow for
+                              trips, including information about which trips
+                              have been approved by the DVC AA and the current
+                              status of each trip in the approval process.
+                           </p>
+                        </div>
+
+                        <div class="col pt-1 pb-4 h-100 custom-hover-effect">
+                           <div
+                              class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                              <i class="bi bi-toggles2"></i>
+                           </div>
+                           <h2 class="h5">Communication Log</h2>
+                           <p class="mb-0">
+                              Displays a log of communications between
+                              departments regarding trip planning, including
+                              details such as the communication date, sender
+                              department, receiver department, and the content
+                              of the communication.
+                           </p>
+                        </div>
+
+                        <div class="col pt-1 pb-4 h-100 custom-hover-effect">
+                           <div
+                              class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                              <i class="bi bi-toggles2"></i>
+                           </div>
+                           <h2 class="h5">Approval Workflow Overview</h2>
+                           <p class="mb-0">
+                              Shows an overview of the approval workflow for
+                              trips, including information about which trips
+                              have been approved by the DVC AA and the current
+                              status of each trip in the approval process.
+                           </p>
+                        </div>
+
+                        <div class="col pt-1 pb-4 h-100 custom-hover-effect">
+                           <div
+                              class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                              <i class="bi bi-toggles2"></i>
+                           </div>
+                           <h2 class="h5">Approval Workflow Overview</h2>
+                           <p class="mb-0">
+                              Shows an overview of the approval workflow for
+                              trips, including information about which trips
+                              have been approved by the DVC AA and the current
+                              status of each trip in the approval process.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+      <!-- Footer-->
+      <footer class="bg-dark py-4 mt-auto">
+         <div class="container px-5">
+            <div
+               class="row align-items-center justify-content-between flex-column flex-sm-row">
+               <div class="col-auto">
+                  <div class="small m-0 text-white">
+                     Copyright &copy; CTP 2024
+                  </div>
+               </div>
+               <div class="col-auto">
+                  <a class="link-light small" href="#!">Privacy</a>
+                  <span class="text-white mx-1">&middot;</span>
+                  <a class="link-light small" href="#!">Terms</a>
+                  <span class="text-white mx-1">&middot;</span>
+                  <a class="link-light small" href="#!">Contact</a>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- Bootstrap core JS-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Core theme JS-->
+      <script src="js/scripts.js"></script>
+   </body>
+</html>
